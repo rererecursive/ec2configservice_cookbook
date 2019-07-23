@@ -18,9 +18,9 @@
 #
 
 node['ec2config']['wallpaper']['custom'].each do |setting|
-  if setting.source == 'environmentvariable' && !setting.value.nil?
-    env setting.identifier do
-      value setting.value
+  if setting['source'] == 'environmentvariable' && !setting['value'].nil?
+    env setting['identifier'] do
+      value setting['value']
     end
   end
 end
